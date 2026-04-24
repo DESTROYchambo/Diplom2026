@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5psmvqbqc871"]
+
+[ext_resource type="PackedScene" uid="uid://5d5lam1dgqni" path="res://scenes/UI/game_screen.tscn" id="1_5rbo4"]
+[ext_resource type="PackedScene" uid="uid://cqdtm5g5aar6f" path="res://scenes/levels/level_1.tscn" id="1_b4e7t"]
+[ext_resource type="PackedScene" uid="uid://c4sal2kewqk7i" path="res://scenes/characters/player/Player.tscn" id="2_ou5fj"]
+
+[node name="MainScene1" type="Node2D"]
+y_sort_enabled = true
+
+[node name="LevelRoot" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Level1" parent="LevelRoot" instance=ExtResource("1_b4e7t")]
+
+[node name="Player" parent="." instance=ExtResource("2_ou5fj")]
+position = Vector2(240, 130)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
+zoom = Vector2(2, 2)
+
+[node name="GameScreen" parent="." instance=ExtResource("1_5rbo4")]

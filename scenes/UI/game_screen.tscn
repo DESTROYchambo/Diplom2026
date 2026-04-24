@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://5d5lam1dgqni"]
+
+[ext_resource type="Theme" uid="uid://dxuiblt3qnr2b" path="res://scenes/UI/game_ui_theme.tres" id="1_erthd"]
+[ext_resource type="PackedScene" uid="uid://dgwenigef44dv" path="res://scenes/UI/ToolsPanel.tscn" id="2_t76gd"]
+[ext_resource type="PackedScene" uid="uid://cq41ryigr3bks" path="res://scenes/UI/inventory_panel.tscn" id="3_t76gd"]
+[ext_resource type="FontVariation" uid="uid://ccx2cub1freaw" path="res://assets/UI/fonts/zx_palm_variation.tres" id="4_ht8k8"]
+[ext_resource type="Script" uid="uid://dhei26w0c2ed6" path="res://scenes/UI/panel_container.gd" id="4_hws2h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hws2h"]
+font = ExtResource("4_ht8k8")
+
+[node name="GameScreen" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_erthd")
+
+[node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_t76gd")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="InventoryPanel" parent="MarginContainer" instance=ExtResource("3_t76gd")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+script = ExtResource("4_hws2h")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Chickens left: 9"
+label_settings = SubResource("LabelSettings_hws2h")

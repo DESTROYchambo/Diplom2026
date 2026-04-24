@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=4 uid="uid://bnrndhi6phl3e"]
+
+[ext_resource type="TileSet" uid="uid://cp7wbebhdns16" path="res://tilesets/house_tilesets.tres" id="1_jp7p4"]
+
+[node name="SmallHouse" type="Node2D"]
+
+[node name="HouseTilemap" type="Node2D" parent="."]
+
+[node name="Floor" type="TileMapLayer" parent="HouseTilemap"]
+tile_map_data = PackedByteArray("AAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAAAAP3/AAABAAEAAAABAP3/AAABAAEAAAACAP3/AAABAAEAAAADAP3/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAACAPz/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAACAPv/AAABAAEAAAADAPv/AAABAAEAAAAEAPv/AAABAAEAAAAFAPv/AAABAAEAAAAFAPz/AAABAAEAAAAEAP3/AAABAAEAAAA=")
+tile_set = ExtResource("1_jp7p4")
+
+[node name="Walls" type="TileMapLayer" parent="HouseTilemap"]
+tile_map_data = PackedByteArray("AAAFAP//AAACAAIAAAAEAP//AAADAAIAAAABAP//AAAAAAIAAAACAP//AAABAAIAAAD///7/AAAAAAIAAAAFAP7/AAACAAEAAAAFAP3/AAADAAAAAAAGAP3/AAACAAIAAAAGAPz/AAACAAEAAAAGAPv/AAACAAEAAAAGAPr/AAACAAAAAAAFAPr/AAABAAAAAAAEAPr/AAADAAIAAAADAPr/AAABAAAAAAACAPr/AAABAAAAAAABAPr/AAABAAAAAAAAAPr/AAABAAAAAAAAAP7/AAADAAIAAAABAP7/AAAEAAAAAAD///v/AAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///r/AAAAAAAAAAADAP//AgAAAAAAAQA=")
+tile_set = ExtResource("1_jp7p4")
+
+[node name="Furniture" type="TileMapLayer" parent="HouseTilemap"]
+tile_map_data = PackedByteArray("AAAFAPv/AQADAAMAAAAFAPz/AQAHAAIAAAAAAPz/AQABAAEAAGACAPr/AQAHAAMAAAADAP7/AQAHAAUAAAAAAPr/AQACAAAAAAAAAP3/AQADAAIAAGAAAPv/AQAEAAMAAAA=")
+tile_set = ExtResource("1_jp7p4")
+
+[node name="Flower" type="TileMapLayer" parent="HouseTilemap"]
+tile_map_data = PackedByteArray("AAAFAPv/AQAEAAEAAAA=")
+tile_set = ExtResource("1_jp7p4")
+
+[node name="Roof" type="TileMapLayer" parent="HouseTilemap"]
+visible = false
+tile_set = ExtResource("1_jp7p4")
