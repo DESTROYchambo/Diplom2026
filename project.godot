@@ -23,6 +23,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 ToolManager="*res://scripts/globals/tool_manager.gd"
 InventoryManager="*res://scripts/globals/inventory_manager.gd"
 ChickenManager="*res://scripts/globals/chicken_manager.gd"
+DayAndNightCycleManager="*uid://csyn45xkv0qvs"
 
 [display]
 

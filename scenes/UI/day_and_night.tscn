@@ -9,16 +9,13 @@ region = Rect2(261, 2, 7, 12)
 
 [node name="DayAndNightPanel" type="Control" unique_id=1132928156]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 theme = ExtResource("1_gxcke")
 
 [node name="DayPanel" type="PanelContainer" parent="." unique_id=1265851025]
 layout_mode = 0
-offset_right = 80.0
+offset_left = -81.0
+offset_right = -1.0
 offset_bottom = 26.0
 theme_type_variation = &"DayAndNightCounterPanel"
 
@@ -37,8 +34,9 @@ text = "DAY 0"
 
 [node name="TimePanel" type="PanelContainer" parent="." unique_id=2081766067]
 layout_mode = 0
+offset_left = -81.0
 offset_top = 28.0
-offset_right = 80.0
+offset_right = -1.0
 offset_bottom = 54.0
 theme_type_variation = &"DayAndNightCounterPanel"
 
@@ -57,8 +55,9 @@ text = "12:00"
 
 [node name="Control" type="Control" parent="." unique_id=1881581459]
 anchors_preset = 0
+offset_left = -81.0
 offset_top = 56.0
-offset_right = 80.0
+offset_right = -1.0
 offset_bottom = 74.0
 
 [node name="NormalSpeedButton" type="Button" parent="Control" unique_id=255261698]
