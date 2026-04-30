@@ -1,11 +1,14 @@
 [gd_scene format=4 uid="uid://k6uu2prn1ppm"]
 
+[ext_resource type="PackedScene" uid="uid://dtjawpcspuwgv" path="res://scenes/components/day_night_cycle_component.tscn" id="1_51cab"]
 [ext_resource type="TileSet" uid="uid://dpb5inemt5cgs" path="res://tilesets/gametileset.tres" id="1_cfcal"]
 [ext_resource type="PackedScene" uid="uid://c4sal2kewqk7i" path="res://scenes/characters/player/Player.tscn" id="2_51cab"]
 [ext_resource type="PackedScene" uid="uid://5d5lam1dgqni" path="res://scenes/UI/game_screen.tscn" id="3_rf13p"]
 
 [node name="TestSceneDayAndNightCycle" type="Node2D" unique_id=1074702866]
 texture_filter = 3
+
+[node name="DayNightCycleComponent" parent="." unique_id=22126946 instance=ExtResource("1_51cab")]
 
 [node name="TileMap" type="Node2D" parent="." unique_id=138121293]
 
