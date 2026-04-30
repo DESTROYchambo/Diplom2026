@@ -7,10 +7,9 @@ var game_speed: float = 5.0
 
 var start_day: int = 1
 var start_hour: int = 12
-var start_minute: int = 00
+var start_minute: int = 30
 
 var time: float = 0.0
-
 var curr_minute: int = -1 
 var curr_day: int = 0
 
@@ -28,7 +27,7 @@ func _process(delta: float) -> void:
 	recalculate_time()
 
 func set_initial_time() -> void:
-	var initial_total_minutes = start_day * MIN_PER_DAY * (start_hour * MIN_PER_HOUR) + start_minute
+	var initial_total_minutes = start_day * MIN_PER_DAY + (start_hour * MIN_PER_HOUR) + start_minute
 	
 	time = initial_total_minutes * GAME_DURATION
 	
