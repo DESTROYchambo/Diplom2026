@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://br3ab4p5osg2x"]
 
 [ext_resource type="Theme" uid="uid://dxuiblt3qnr2b" path="res://scenes/UI/game_ui_theme.tres" id="1_gxcke"]
+[ext_resource type="Script" uid="uid://dh63vfcmhduqc" path="res://scenes/UI/day_and_night.gd" id="2_6neee"]
 [ext_resource type="Texture2D" uid="uid://qqnvied2w23r" path="res://assets/UI/basic_ui.png" id="2_dwvk8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6neee"]
@@ -11,6 +12,7 @@ region = Rect2(261, 2, 7, 12)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_gxcke")
+script = ExtResource("2_6neee")
 
 [node name="DayPanel" type="PanelContainer" parent="." unique_id=1265851025]
 layout_mode = 0
@@ -26,7 +28,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="DayPanel/MarginContainer" unique_id=1697761859]
+[node name="DayLabel" type="Label" parent="DayPanel/MarginContainer" unique_id=1697761859]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"DayAndNightLabel"
@@ -47,11 +49,11 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="TimePanel/MarginContainer" unique_id=196509215]
+[node name="TimeLabel" type="Label" parent="TimePanel/MarginContainer" unique_id=196509215]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"DayAndNightLabel"
-text = "12:00"
+text = "00:00"
 
 [node name="Control" type="Control" parent="." unique_id=1881581459]
 anchors_preset = 0
@@ -168,3 +170,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_6neee")
+
+[connection signal="pressed" from="Control/NormalSpeedButton" to="." method="_on_normal_speed_button_pressed"]
+[connection signal="pressed" from="Control/FastSpeedButton" to="." method="_on_fast_speed_button_pressed"]
+[connection signal="pressed" from="Control/FastestSpeedButton" to="." method="_on_fastest_speed_button_pressed"]
