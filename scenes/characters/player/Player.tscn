@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://c4sal2kewqk7i"]
+[gd_scene format=3 uid="uid://c4sal2kewqk7i"]
 
 [ext_resource type="Texture2D" uid="uid://djh5gsqqfxkak" path="res://assets/characters/basic_charakter_actions.png" id="1_b7oxf"]
 [ext_resource type="Script" uid="uid://ccyj3llaxwlxh" path="res://scenes/characters/player/player.gd" id="1_imd1d"]
@@ -401,56 +401,57 @@ height = 10.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wwjds"]
 radius = 3.0
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1562030533 groups=["Player"]]
 y_sort_enabled = true
 texture_filter = 3
 collision_layer = 2
 collision_mask = 113
 script = ExtResource("1_imd1d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1360380973]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_70d11")
 animation = &"chopping_front"
 autoplay = "idle_front"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=996847301]
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_v6fml")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1717607620 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("3_7xy7u")
 initial_node_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=116234421 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("4_lxifr")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Run" type="Node" parent="StateMachine" unique_id=1881665835 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("5_lxifr")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
+[node name="Chopping" type="Node" parent="StateMachine" unique_id=930091273 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("7_k835w")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
-[node name="Tilling" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Tilling" type="Node" parent="StateMachine" unique_id=1080201676 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("8_lces5")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Watering" type="Node" parent="StateMachine" unique_id=1067704771 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("9_jhxyj")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
-[node name="HitComponent" parent="." instance=ExtResource("10_5edqu")]
+[node name="HitComponent" parent="." unique_id=391040784 instance=ExtResource("10_5edqu")]
 collision_mask = 24
 
-[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1728203944]
 shape = SubResource("CircleShape2D_wwjds")
 debug_color = Color(0.9758646, 0.035147578, 0.39362955, 0.41960785)

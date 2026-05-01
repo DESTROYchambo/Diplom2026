@@ -1,6 +1,6 @@
 class_name GrowthCycleComponent
 extends Node2D
-@export var current_growth: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
+@export var current_growth: DataTypes.GrowthStates = DataTypes.GrowthStates.Seedling
 
 @export_range(5,365) var days_until_harvest: int = 7
 
