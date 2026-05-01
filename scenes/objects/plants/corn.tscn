@@ -11,6 +11,7 @@
 size = Vector2(13, 8)
 
 [node name="Corn" type="Node2D" unique_id=1076521171]
+y_sort_enabled = true
 script = ExtResource("1_hgaca")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=540662403]

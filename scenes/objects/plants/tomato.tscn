@@ -11,6 +11,7 @@
 size = Vector2(9, 6.5)
 
 [node name="Tomato" type="Node2D" unique_id=707969303]
+y_sort_enabled = true
 script = ExtResource("1_i4hd5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2057138948]
