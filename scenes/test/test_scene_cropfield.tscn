@@ -13,7 +13,7 @@
 texture_filter = 3
 
 [node name="DayNightCycleComponent" parent="." unique_id=22126946 instance=ExtResource("1_dmfbt")]
-visible = false
+start_minute = 0
 
 [node name="TileMap" type="Node2D" parent="." unique_id=138121293]
 
