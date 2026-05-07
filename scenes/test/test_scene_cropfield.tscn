@@ -6,11 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://c4sal2kewqk7i" path="res://scenes/characters/player/Player.tscn" id="3_yo1pr"]
 [ext_resource type="Script" uid="uid://c0j5mldpdgf7b" path="res://scenes/components/field_cursor_component.gd" id="4_ad2w0"]
 [ext_resource type="PackedScene" uid="uid://5d5lam1dgqni" path="res://scenes/UI/game_screen.tscn" id="4_hdgp6"]
+[ext_resource type="PackedScene" uid="uid://cjy1gcx2h8ih1" path="res://scenes/components/save_data_component.tscn" id="6_8xr7o"]
+[ext_resource type="Resource" uid="uid://bp0r5e2yfedwo" path="res://resources/tilemap_layer_data_resource.tres" id="7_7ni26"]
 [ext_resource type="PackedScene" uid="uid://bhdhrxkjili7j" path="res://scenes/components/crops_cursor_component.tscn" id="7_ad2w0"]
 [ext_resource type="Script" uid="uid://bbqkof1o7qb1o" path="res://scenes/components/crops_cursor_component.gd" id="8_yo1pr"]
+[ext_resource type="PackedScene" uid="uid://m1uuqhyjbu6x" path="res://scenes/components/save_level_data_component.tscn" id="9_fidmq"]
+[ext_resource type="Script" uid="uid://bft5dgjrdwmmw" path="res://scenes/components/save_level_data_component.gd" id="10_qxm80"]
+[ext_resource type="PackedScene" uid="uid://deuoix82583qd" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="11_qxm80"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D" unique_id=1074702866]
 texture_filter = 3
+
+[node name="SaveLevelDataComponent" parent="." unique_id=333419467 instance=ExtResource("9_fidmq")]
+script = ExtResource("10_qxm80")
+
+[node name="TestSceneSaveDataManagerComponent" parent="." unique_id=824233554 instance=ExtResource("11_qxm80")]
 
 [node name="DayNightCycleComponent" parent="." unique_id=22126946 instance=ExtResource("1_dmfbt")]
 start_minute = 0
@@ -29,13 +39,15 @@ tile_set = ExtResource("2_ad2w0")
 [node name="TilledSoil" type="TileMapLayer" parent="TileMap" unique_id=1183950082]
 tile_set = ExtResource("2_ad2w0")
 
+[node name="SaveDataComponent" parent="TileMap/TilledSoil" unique_id=742647357 instance=ExtResource("6_8xr7o")]
+save_data_resource = ExtResource("7_7ni26")
+
 [node name="CropFields" type="Node2D" parent="." unique_id=553024372]
 
 [node name="FieldCursorComponent" parent="." unique_id=2057307686 node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("3_dmfbt")]
 script = ExtResource("4_ad2w0")
 grass_tilemap_layer = NodePath("../TileMap/Grass")
 tilled_soil_tilemap_layer = NodePath("../TileMap/TilledSoil")
-terrain = 4
 
 [node name="CropsCursorComponent" parent="." unique_id=1375799401 node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("7_ad2w0")]
 script = ExtResource("8_yo1pr")

@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://bsp8yqsnkcnqa" path="res://scenes/objects/plants/corn.gd" id="1_hgaca"]
 [ext_resource type="Texture2D" uid="uid://b1ovxlirx42vt" path="res://assets/objects/basic_plants.png" id="1_hm4is"]
 [ext_resource type="PackedScene" uid="uid://nloystjxivr7" path="res://scenes/components/hurt_component.tscn" id="2_aphyd"]
-[ext_resource type="PackedScene" path="res://scenes/objects/plants/watering_particle.tscn" id="2_ofjf8"]
-[ext_resource type="PackedScene" path="res://scenes/objects/plants/flowering_particle.tscn" id="3_ofjf8"]
+[ext_resource type="PackedScene" uid="uid://b2wo8dyjrvs03" path="res://scenes/objects/plants/watering_particle.tscn" id="2_ofjf8"]
+[ext_resource type="PackedScene" uid="uid://by4l05hd8cx0o" path="res://scenes/objects/plants/flowering_particle.tscn" id="3_ofjf8"]
 [ext_resource type="PackedScene" uid="uid://dr3630nsla854" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_q3ekf"]
+[ext_resource type="PackedScene" uid="uid://cjy1gcx2h8ih1" path="res://scenes/components/save_data_component.tscn" id="7_q3ekf"]
+[ext_resource type="Resource" uid="uid://crpn63583qeoq" path="res://resources/scene_data_resource.tres" id="8_310os"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ucl7"]
 size = Vector2(13, 8)
@@ -33,3 +35,6 @@ tool = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=175472937]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_5ucl7")
+
+[node name="SaveDataComponent" parent="." unique_id=742647357 instance=ExtResource("7_q3ekf")]
+save_data_resource = ExtResource("8_310os")
