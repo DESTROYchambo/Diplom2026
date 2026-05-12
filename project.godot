@@ -27,6 +27,7 @@ ChickenManager="*res://scripts/globals/chicken_manager.gd"
 DayAndNightCycleManager="*uid://csyn45xkv0qvs"
 SaveGameManager="*uid://bec2g23k27wli"
 DialogueManager="*uid://c3rodes2l3gxb"
+GameDialogueManager="*uid://c5wex6vck15b5"
 
 [display]
 

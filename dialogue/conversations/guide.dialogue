@@ -1,6 +1,12 @@
 ~ start
-William: [[Hi|Hello|Hey|Greetings], nice to meet you!
+William: [[Hi|Hello|Hey|Greetings]], nice to meet you!
 William: Welcome to your farm.
 William: Your animals quite hungry! As you might have already guessed you should feed them.
 William: Here are some seeds to grow some crops.
+- Take crop seeds
+	Player: Thank you!
+	do GameDialogueManager.action_give_crops_seeds()
+- I don't want them
+	Player: I think I'm not ready yet.
+
 => END
