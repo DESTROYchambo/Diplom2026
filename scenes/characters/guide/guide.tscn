@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dx4chfx4w7fe8"]
+
+[ext_resource type="Texture2D" uid="uid://bufndemvsrxyy" path="res://assets/characters/basic_charakter_spritesheet.png" id="1_fuflw"]
+[ext_resource type="Shader" uid="uid://0ulxnhnljch1" path="res://scenes/characters/guide/replace_color.gdshader" id="1_rl4q2"]
+[ext_resource type="PackedScene" uid="uid://bp3s78a1ko6iy" path="res://scenes/components/interactable_component.tscn" id="3_g6y3g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g6y3g"]
+shader = ExtResource("1_rl4q2")
+shader_parameter/original_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+shader_parameter/replace_0 = Color(0.9103172, 0.28166494, 0.47698867, 1)
+shader_parameter/replace_1 = Color(0.4721176, 0.1421946, 0.06269507, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl4q2"]
+atlas = ExtResource("1_fuflw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6y3g"]
+atlas = ExtResource("1_fuflw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvxhl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl4q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6y3g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yvxhl"]
+radius = 18.0
+
+[node name="Guide" type="Node2D" unique_id=1989263283]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=636025255]
+material = SubResource("ShaderMaterial_g6y3g")
+sprite_frames = SubResource("SpriteFrames_yvxhl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.799327
+
+[node name="InteractableComponent" parent="." unique_id=84621780 instance=ExtResource("3_g6y3g")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1031478483]
+shape = SubResource("CircleShape2D_yvxhl")
