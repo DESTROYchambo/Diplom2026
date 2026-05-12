@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dx4chfx4w7fe8"]
 
 [ext_resource type="Texture2D" uid="uid://bufndemvsrxyy" path="res://assets/characters/basic_charakter_spritesheet.png" id="1_fuflw"]
+[ext_resource type="Script" uid="uid://cnviooa6bp4gl" path="res://scenes/characters/guide/guide.gd" id="1_pdv8u"]
 [ext_resource type="Shader" uid="uid://0ulxnhnljch1" path="res://scenes/characters/guide/replace_color.gdshader" id="1_rl4q2"]
 [ext_resource type="PackedScene" uid="uid://bp3s78a1ko6iy" path="res://scenes/components/interactable_component.tscn" id="3_g6y3g"]
+[ext_resource type="PackedScene" uid="uid://dhvn18h6us0ee" path="res://scenes/components/interactable_label_component.tscn" id="5_qnx84"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g6y3g"]
 shader = ExtResource("1_rl4q2")
@@ -37,6 +39,8 @@ animations = [{
 radius = 18.0
 
 [node name="Guide" type="Node2D" unique_id=1989263283]
+position = Vector2(0, -8)
+script = ExtResource("1_pdv8u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=636025255]
 material = SubResource("ShaderMaterial_g6y3g")
@@ -49,3 +53,9 @@ frame_progress = 0.799327
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1031478483]
 shape = SubResource("CircleShape2D_yvxhl")
+
+[node name="InteractableLabelComponent" parent="." unique_id=1156473905 instance=ExtResource("5_qnx84")]
+offset_left = -24.0
+offset_top = -27.0
+offset_right = -6.0
+offset_bottom = -9.0
