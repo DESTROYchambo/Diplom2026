@@ -19,10 +19,9 @@ y_sort_enabled = true
 [node name="Level2" parent="GameRoot/LevelRoot" unique_id=321402538 instance=ExtResource("2_xgwwe")]
 
 [node name="Player" parent="." unique_id=1154051742 groups=["player"] instance=ExtResource("2_ou5fj")]
-position = Vector2(387, 169)
+position = Vector2(284, 148)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1773833566]
-visible = false
-zoom = Vector2(2, 2)
+zoom = Vector2(3.025, 3.025)
 
 [node name="GameScreen" parent="." unique_id=2122477877 instance=ExtResource("1_5rbo4")]

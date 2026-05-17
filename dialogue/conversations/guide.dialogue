@@ -23,7 +23,7 @@ elif GameDialogueManager.status == "1":
 			do GameDialogueManager.action_give_crops_seeds()
 			set GameDialogueManager.status = "2"
 		else: 
-			William: Ну і що це? Ти нічого не приніс!
+			William: Ну і що це? Це не те що я просив!
 	- Ні
 elif GameDialogueManager.status == "2": 
 	William: Ну що, як успіхи?
@@ -35,7 +35,7 @@ elif GameDialogueManager.status == "2":
 			William: А якщо хочеш завершити гру, то знайди загон з курами та злови їх всіх!
 			set GameDialogueManager.status = "3"
 		else: 
-			William: Ну і що це? Ти нічого не приніс!
+			William: Ну і що це? Це не те що я просив!
 	- Ще не готовий!
 elif GameDialogueManager.status == "3": 
 	William: Я тебе навчив всьому, що я знаю, тож далі ти сам!
