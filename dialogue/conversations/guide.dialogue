@@ -1,12 +1,44 @@
 ~ start
-William: [[Hi|Hello|Hey|Greetings]], nice to meet you!
-William: Welcome to your farm.
-William: Your animals quite hungry! As you might have already guessed you should feed them.
-William: Here are some seeds to grow some crops.
-- Take crop seeds
-	Player: Thank you!
-	do GameDialogueManager.action_give_crops_seeds()
-- I don't want them
-	Player: I think I'm not ready yet.
-
+William: Привіт!
+if GameDialogueManager.status == "0":
+	William: Радий познайомитися, я Вільям!
+	William: А це тепер твоя ферма!
+	Player:  Привіт, дякую, а що мені робити?
+	William: Наприклад, ти можеш розчистити для себе галявину неподалік дому та виростити врожай!
+	Player: А як мені виростити врожай чи розчистити галявину?
+	William: За допомогою сокири яка в тебе вже є ти можеш прибрати каміння та звичайні дерева.
+	William: Просто вибери сокиру, підійди до дерева або каменя та натискай на клавішу Е!
+	Player: Добре, я зрозумів!
+	William: А щодо посадки насіння трохи складніше...Здобудь один камень та дерево і ми поговоримо про це.
+	set GameDialogueManager.status = "1"
+elif GameDialogueManager.status == "1": 
+	William: Ну що, приніс?
+	- Так 
+		if InventoryManager.find_collectible("log") >= 1 and InventoryManager.find_collectible("stone") >= 1:
+			William: Чудово, молодець!
+			William: Тож, щоб посадити насіння бери сапу та зорай землю де тобі заманеться.
+			William: Після цього, посади насіння на грядки та полий його!
+			William: Насіння виросте та ти зможеш зібрати його врожай.
+			William: Тепер, пройди складніший рівень! Принеси мені 2 од. пшениці та 3 од. томатів.
+			do GameDialogueManager.action_give_crops_seeds()
+			set GameDialogueManager.status = "2"
+		else: 
+			William: Ну і що це? Ти нічого не приніс!
+	- Ні
+elif GameDialogueManager.status == "2": 
+	William: Ну що, як успіхи?
+	- Віддати
+		if InventoryManager.find_collectible("corn") >= 2  and InventoryManager.find_collectible("tomato") >= 3:
+			William: Вітаю, ти тепер справжній фермер!
+			William: Я тебе навчив всьому, що я знаю, тож далі ти сам!
+			William: Якщо хочеш взяти паузу можеш натиснути на клавішу P так ти збережеш гру та грядки з інвентарем!
+			William: А якщо хочеш завершити гру, то знайди загон з курами та злови їх всіх!
+			set GameDialogueManager.status = "3"
+		else: 
+			William: Ну і що це? Ти нічого не приніс!
+	- Ще не готовий!
+elif GameDialogueManager.status == "3": 
+	William: Я тебе навчив всьому, що я знаю, тож далі ти сам!
+	William: Якщо хочеш взяти паузу можеш натиснути на клавішу P так ти збережеш гру та грядки з інвентарем!
+	William: А якщо хочеш завершити гру, то знайди загон з курами та злови їх всіх!
 => END

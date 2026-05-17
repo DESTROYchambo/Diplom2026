@@ -1,6 +1,6 @@
 extends Node
 
-var chickens_left: int = 9
+var chickens_left: int = 6
 signal chicken_catched
 
 func add_chicken() -> void:

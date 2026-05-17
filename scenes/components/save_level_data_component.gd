@@ -16,6 +16,7 @@ func save_node_data() -> void:
 	var nodes = get_tree().get_nodes_in_group("save_data_component")
 	
 	game_data_resource = SaveGameDataResource.new()
+	game_data_resource.inventory = InventoryManager.inventory.duplicate(true)
 	
 	if nodes != null:
 		for node: SaveDataComponent in nodes:
@@ -48,6 +49,10 @@ func load_game() -> void:
 	
 	if game_data_resource == null:
 		return
+	
+	if game_data_resource.inventory != null:
+		InventoryManager.inventory = game_data_resource.inventory.duplicate(true)
+		InventoryManager.inventory_changed.emit()
 	
 	var root_node: Window = get_tree().root
 	
