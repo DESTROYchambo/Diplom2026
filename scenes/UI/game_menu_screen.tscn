@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cmktt83oheotg"]
+
+[ext_resource type="Theme" uid="uid://dxuiblt3qnr2b" path="res://scenes/UI/game_ui_theme.tres" id="1_iv8ii"]
+[ext_resource type="Script" uid="uid://drylim4p8a5r2" path="res://scenes/UI/game_menu_screen.gd" id="1_nccrm"]
+[ext_resource type="PackedScene" uid="uid://bwfej8s3aj3ar" path="res://scenes/UI/game_menu_screen_background.tscn" id="1_ttouv"]
+[ext_resource type="PackedScene" uid="uid://dfno573pp7ad3" path="res://scenes/components/mouse_cursor_component.tscn" id="2_6yd3o"]
+[ext_resource type="Texture2D" uid="uid://d1dw5a05pmwpt" path="res://assets/UI/mouse.png" id="3_vm0vm"]
+
+[node name="GameMenuScreen" type="CanvasLayer" unique_id=1824959772]
+script = ExtResource("1_nccrm")
+
+[node name="MouseCursorComponent" parent="." unique_id=1257828756 instance=ExtResource("2_6yd3o")]
+cursor_component_texture = ExtResource("3_vm0vm")
+
+[node name="GameMenuScreenBackground" parent="." unique_id=1790822206 instance=ExtResource("1_ttouv")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1993879142]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iv8ii")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=142343296]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer" unique_id=2055305000]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6431373, 0.7607843, 0.3882353, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 54
+text = "GardenTale"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1162306655]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=534255996]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Грати
+"
+
+[node name="SaveGame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=57630930]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Зберегти
+"
+
+[node name="ExitGame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1003695316]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Вийти
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]

@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dqc7iqktrvsup" path="res://tilesets/fences.png" id="11_4mp1v"]
 [ext_resource type="Texture2D" uid="uid://cej15ntjpsh6l" path="res://assets/objects/paths.png" id="11_fipkc"]
 [ext_resource type="Texture2D" uid="uid://bmdyxiwaoqjqp" path="res://assets/tilesets/tilled_dirt_wide_crops.png" id="13_om1n0"]
+[ext_resource type="Texture2D" uid="uid://b1ovxlirx42vt" path="res://assets/objects/basic_plants.png" id="14_1lsj5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qifjx"]
 texture = ExtResource("1_sqyx6")
@@ -861,6 +862,11 @@ texture = ExtResource("13_om1n0")
 3:2/0/terrain = 3
 3:2/0/terrains_peering_bit/top_side = 3
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m04wi"]
+texture = ExtResource("14_1lsj5")
+4:0/0 = 0
+4:1/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -881,3 +887,4 @@ sources/5 = SubResource("TileSetScenesCollectionSource_y7qdd")
 sources/7 = SubResource("TileSetAtlasSource_fipkc")
 sources/6 = SubResource("TileSetAtlasSource_om1n0")
 sources/8 = SubResource("TileSetAtlasSource_1lsj5")
+sources/9 = SubResource("TileSetAtlasSource_m04wi")

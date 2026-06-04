@@ -2,11 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://5d5lam1dgqni" path="res://scenes/UI/game_screen.tscn" id="1_5rbo4"]
 [ext_resource type="PackedScene" uid="uid://dtjawpcspuwgv" path="res://scenes/components/day_night_cycle_component.tscn" id="1_7s5l8"]
+[ext_resource type="PackedScene" uid="uid://dfno573pp7ad3" path="res://scenes/components/mouse_cursor_component.tscn" id="1_v2aqo"]
+[ext_resource type="Texture2D" uid="uid://d1dw5a05pmwpt" path="res://assets/UI/mouse.png" id="2_craop"]
 [ext_resource type="PackedScene" uid="uid://c4sal2kewqk7i" path="res://scenes/characters/player/Player.tscn" id="2_ou5fj"]
-[ext_resource type="PackedScene" uid="uid://dfekshkn47k6i" path="res://scenes/levels/level_2.tscn" id="2_xgwwe"]
+[ext_resource type="PackedScene" uid="uid://dfekshkn47k6i" path="res://scenes/levels/level_1.tscn" id="2_xgwwe"]
 
-[node name="MainScene1" type="Node2D" unique_id=1394632065]
-y_sort_enabled = true
+[node name="MainScene" type="Node" unique_id=241094004]
+
+[node name="MouseCursorComponent" parent="." unique_id=1257828756 instance=ExtResource("1_v2aqo")]
+cursor_component_texture = ExtResource("2_craop")
 
 [node name="DayNightCycleComponent" parent="." unique_id=22126946 instance=ExtResource("1_7s5l8")]
 
@@ -16,12 +20,12 @@ y_sort_enabled = true
 [node name="LevelRoot" type="Node2D" parent="GameRoot" unique_id=506259746]
 y_sort_enabled = true
 
-[node name="Level2" parent="GameRoot/LevelRoot" unique_id=321402538 instance=ExtResource("2_xgwwe")]
+[node name="Level1" parent="GameRoot/LevelRoot" unique_id=321402538 instance=ExtResource("2_xgwwe")]
 
-[node name="Player" parent="." unique_id=1154051742 groups=["player"] instance=ExtResource("2_ou5fj")]
+[node name="Player" parent="GameRoot" unique_id=1154051742 groups=["player"] instance=ExtResource("2_ou5fj")]
 position = Vector2(284, 148)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1773833566]
+[node name="Camera2D" type="Camera2D" parent="GameRoot/Player" unique_id=1773833566]
 zoom = Vector2(3.025, 3.025)
 
 [node name="GameScreen" parent="." unique_id=2122477877 instance=ExtResource("1_5rbo4")]
