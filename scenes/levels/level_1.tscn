@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://m1uuqhyjbu6x" path="res://scenes/components/save_level_data_component.tscn" id="1_brxtv"]
 [ext_resource type="TileSet" uid="uid://dpb5inemt5cgs" path="res://tilesets/gametileset.tres" id="1_j2425"]
+[ext_resource type="PackedScene" uid="uid://pcppb5fwcxc6" path="res://audio/music/on_the_farm_music.tscn" id="1_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://bnrndhi6phl3e" path="res://scenes/houses/small_house.tscn" id="2_g2h2n"]
 [ext_resource type="Script" uid="uid://bft5dgjrdwmmw" path="res://scenes/components/save_level_data_component.gd" id="2_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://lh7iuhnixx7v" path="res://scenes/components/field_cursor_component.tscn" id="3_3p04p"]
@@ -27,6 +28,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(471, 410, 518, 406, 599
 
 [node name="Level1" type="Node2D" unique_id=321402538]
 y_sort_enabled = true
+
+[node name="OnTheFarmMusic" parent="." unique_id=270021017 instance=ExtResource("1_wtwp4")]
+autoplay = true
 
 [node name="SaveLevelDataComponent" parent="." unique_id=333419467 instance=ExtResource("1_brxtv")]
 script = ExtResource("2_tv7cl")

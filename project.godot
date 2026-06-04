@@ -15,9 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="GardenTale"
-run/main_scene="uid://b5psmvqbqc871"
+run/main_scene="uid://cmktt83oheotg"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout="uid://tq43wal0kowx"
 
 [autoload]
 
@@ -50,6 +54,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 
 folder_colors={
 "res://assets/": "orange",
+"res://audio/": "red",
 "res://dialogue/": "blue",
 "res://resources/": "purple",
 "res://scenes/": "green",
