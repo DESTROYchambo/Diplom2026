@@ -32,7 +32,10 @@ static var were_addons_disabled : bool = true
 @warning_ignore("unsafe_property_access")
 @warning_ignore("untyped_declaration")
 static func _static_init() -> void:
-	were_addons_disabled = ProjectSettings.get(str(WARNING_PATH, 'exclude_addons'))
+	if ProjectSettings.has_setting(str(WARNING_PATH, 'exclude_addons')):
+		were_addons_disabled = ProjectSettings.get(str(WARNING_PATH, 'exclude_addons'))
+	else:
+		were_addons_disabled = false
 	ProjectSettings.set(str(WARNING_PATH, 'exclude_addons'), true)
 
 	var WarningsManager = load('res://addons/gut/warnings_manager.gd')

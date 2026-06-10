@@ -16,7 +16,9 @@ func save_node_data() -> void:
 	var nodes = get_tree().get_nodes_in_group("save_data_component")
 	
 	game_data_resource = SaveGameDataResource.new()
+	##
 	game_data_resource.inventory = InventoryManager.inventory.duplicate(true)
+	##
 	
 	if nodes != null:
 		for node: SaveDataComponent in nodes:
