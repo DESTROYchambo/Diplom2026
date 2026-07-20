@@ -10,5 +10,9 @@
 * GDScript
 
 ## Опублікований продукт
-Інсталяційний пакет створеної гри можна завантажити з магазину
-[itch.io](http://itch.io)
+Інсталяційний пакет створеної гри можна завантажити з: 
+
+[Реліз Github](https://github.com/DESTROYchambo/Diplom2026/releases/tag/v1.0)
+
+[Сайт Itch.io](https://destroychambo.itch.io/gardentale)
+
